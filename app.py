@@ -74,7 +74,7 @@ def sendMail():
             </html>
             """ + request.form.get("textArea")
         subject = request.form.get("asunto")
-        recipient = 'lautoonix02@gmail.com'
+        recipient = 'capacitaciongde@jujuy.gob.ar'
         send_email(body, html, subject, recipient)
         return exito("Su mensaje fue enviado con exito")
     except:
@@ -95,7 +95,7 @@ def sendConsulta():
             </html>
             """ + request.form.get("textArea")
         subject = request.form.get("asunto")
-        recipient = "lautoonix02@gmail.com"
+        recipient = 'capacitaciongde@jujuy.gob.ar'
         send_email(body, html, subject, recipient)
         return exito("Su mensaje fue enviado con exito")
     except:

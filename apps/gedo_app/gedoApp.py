@@ -10,7 +10,6 @@ __all__ = ["get_content_gedo", "post_new_content_gedo", "edit_content_gedo"]
 
 
 def get_content_gedo(codigo):
-    def get_content_gedo(codigo):
     if codigo == 1321:
         session['nivelacion'] = 1
     if codigo == 1338:
