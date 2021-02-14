@@ -9,7 +9,6 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from flask_session import Session
 from flask_mail import Mail, Message
 from helper import error, exito
-from gedoManager import gedoManager
 from apps.ccoo_app.ccooApp import *
 from apps.ccoo_app.ccooRoutes import *
 from apps.ee_app.eeApp import *
