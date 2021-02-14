@@ -21,6 +21,14 @@ def level_up_gedo_query(id):
                Id=id)
 
 
+def level_up_gedo_query2(id):
+    db.execute("""UPDATE users SET usu_Nivel=:usu_Nivel
+        WHERE usu_Id = :Id
+        """,
+               usu_Nivel='6',
+               Id=id)
+
+
 def upload_content_gedo_query(codigo, categoria, titulo, content):
     db.execute("INSERT INTO coursegedo(co_Codigo,co_Categoria,co_Titulo,co_Contenido) VALUES (:codigo,:categoria,:titulo,:content)",
                codigo=codigo,

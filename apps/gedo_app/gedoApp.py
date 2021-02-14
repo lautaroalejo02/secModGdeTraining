@@ -10,13 +10,16 @@ __all__ = ["get_content_gedo", "post_new_content_gedo", "edit_content_gedo"]
 
 
 def get_content_gedo(codigo):
+    def get_content_gedo(codigo):
     if codigo == 1321:
-        session['nivelacion'] = 2
-    if codigo == 1338:
         session['nivelacion'] = 1
+    if codigo == 1338:
+        session['nivelacion'] = 2
     content = get_content_gedo_query(codigo)
-    if codigo == 1337 and session['nivel'] == 2:
-        level_up_gedo_query()
+    if codigo == 1337 and session['nivel'] == '2':
+        level_up_gedo_query(session["user_id"])
+    if codigo == 1369 and session['nivel'] == '6':
+        level_up_ccoo_query2(session["user_id"])
     return render_template("gedo_templates/contenidoGEDO.html", content=content, codigo=codigo)
 
 
