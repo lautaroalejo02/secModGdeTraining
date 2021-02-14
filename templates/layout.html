@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>GDE</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<script src="{{url_for('static', filename='js/layout.js')}}"></script>
+<script src="https://cdn.tiny.cloud/1/exn1ag9l5suf8q9xnpob9th8kifksj7y5f4buvv3s12eznci/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<script>
+    tinymce.init({
+      selector: 'textarea:not(.not-here)"',selector: "textarea.editme",
+      plugins: [
+    'advlist autolink lists link image charmap print preview anchor',
+    'searchreplace visualblocks code fullscreen',
+    'insertdatetime media table paste code help wordcount'
+  ],
+  toolbar: 'undo redo | formatselect | ' +
+  'bold italic backcolor | alignleft aligncenter ' +
+  'alignright alignjustify | bullist numlist outdent indent | ' +
+  'removeformat | help',
+      toolbar_mode: 'floating',
+    });
+  </script>
+
+
+
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+
+
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/layout.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/navbar.css') }}">
+  </head>
+  <body>
+    <div id="page-container">
+      <div id="content-wrap">
+    <body class="hero-anime">
+
+        <div class="navigation-wrap start-header start-style" id="navcolor">
+            <div class="container">
+            <div class="row">
+            <div class="col-12">
+            <nav class="navbar navbar-expand-md navbar-light" id="navbarcolor">
+
+            <a class="navbar-brand" id="logo" href="http://jujuy.gob.ar/home/" target="_blank"><img src="/static/img/logoGDE.jpg" alt="" style="border-radius: 12px;"></a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto py-4 py-md-0">
+            <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+            <a class="nav-link"  href="/">Inicio</a>
+            </li>
+            <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+            <a class="nav-link" href="/cursos">Cursos</a>
+            </li>
+            <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+            <a class="nav-link" href="/contacto">Contacto</a>
+            </li>
+            {% if not session.user_id %}
+            <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                <a class="nav-link" href="/login">Login</a>
+                </li>
+            {% endif %}
+            {% if session.user_id %}
+            <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                <a class="nav-link" href="/encuesta">Encuesta</a>
+                </li>
+            {% endif %}
+            {% if session.user_id %}
+            <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                <a class="nav-link" href="/dudas">Dudas y consultas</a>
+                </li>
+            {% endif %}
+            {% if session.user_id %}
+            <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                <a class="nav-link" href="/logout">Logout</a>
+                </li>
+            {% endif %}
+            {% if session.rol == 2 or session.rol == 3 %}
+                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                    <a class="nav-link" href="/register">Registro</a>
+                </li>
+            {% endif %}
+
+            {% if session.rol == 2 or session.rol == 3 %}
+            <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                <a class="nav-link" href="/verEncuesta">Ver Encuesta</a>
+            </li>
+        {% endif %}
+
+            {% if session.rol == 3 %}
+              <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                    <a class="nav-link" href="/adminUsers">Usuarios</a>
+              </li>
+            {% endif %}
+            </ul>
+            </div>
+
+            </nav>
+            </div>
+            </div>
+            </div>
+        </div>
+    </body>
+    <main class="container-fluid p-5">
+        {% block main %}{% endblock %}
+        <br>
+        <br>
+        <br>
+   <br>
+    </main>
+    <br>
+
+  </div>
+  <footer>
+      <div class="py-3" id="footer">
+        <div class="container text-center">
+          <p >© 2020 Secretaria de Modernizacion.</p>
+        </div>
+      </div>
+    </footer>
+</div>
+      <!-- Footer -->
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js'></script>
+  </body>
+</html>
+
+
+
+
+
+

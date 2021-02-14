@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block title %}
+   Cursos
+{% endblock %}
+{% block main %}
+<br>
+<br>
+<br>
+<br>
+<hr>
+{% for i in posts %}
+<div class="card w-75" style="height:220px !important;">
+   <div class="card-body">
+     <a href="/verpost/CCOO/{{i["postccoo_Id"]}}"><h4 class="card-title">{{i["postccoo_Titulo"]}}</h5></a>
+      <hr>
+     <h6 class="card-subtitle mb-2 text-muted">Creado por {{i["usu_Nombre"]}} {{i["usu_Apellido"]}}</h6>
+     <p class="card-text">{{i["postccoo_Contenido"]}}</p>
+     <a class="btn btn-primary btn-lg" href="/verpost/CCOO/{{i["postccoo_Id"]}}" role="button">Ver la consulta</a>
+     {% if session.rol == 3 %}
+     <a class="btn btn-danger btn-lg" href="#" role="button">Eliminar</a>
+     {% endif %}
+   </div>
+ </div>
+ 
+ {% endfor %}
+{% endblock %}

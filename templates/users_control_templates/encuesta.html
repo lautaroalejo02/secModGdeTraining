@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+   Cursos
+{% endblock %}
+{% block main %}
+   <br>
+   <br>
+   <br>
+   <h3>Que documento le parece que faltaria en GDE</h3>
+   <br>
+   <br>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<a class="floatF"  href="https://www.facebook.com/Secretaría-de-Modernización-Jujuy-100508345130519/" class="facebook"><i class="fa fa-facebook my-floatF"></i></a>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<a href="https://api.whatsapp.com/send?phone=543884383563" class="float" target="_blank">
+<i class="fa fa-whatsapp my-float"></i>
+
+</a>
+<form action="/encuesta" method="POST">
+    <label for="cmb">Seleccione al area de la cual quiere brindar su opinion</label>
+    <select class="form-control" name="cmb" id="cmb" style="width: 220px;">
+        <option value="CCOO">CCOO</option>
+        <option value="EE">EE</option>
+        <option value="GEDO">GEDO</option>
+
+      </select>
+      <br>
+    <label for="comment">Respuesta:</label>
+    <textarea class="form-control not-here" rows="5" name="contenido" id="contenido"></textarea>
+  
+    <br>
+    <br>
+    <div class="text-center">
+        <button id="button" class="btn btn-primary btn-lg" type="submit" style="width: 300px;">Enviar</button>
+    </div>
+  
+    <br>
+</form>
+{% endblock %}
+<label for="fechafiltrada">Buscar por fecha</label>

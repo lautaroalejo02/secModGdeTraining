@@ -1,0 +1,162 @@
+{% extends "layout.html" %}
+{% block title %}
+   Cursos
+{% endblock %}
+{% block main %}
+<br>
+<br>
+<br>
+<br>
+<section id="gallery">
+    <div class="container">
+      <div class="row">
+      <div class="col-lg-4 mb-4">
+      <div class="card">
+        <img src="https://campus.gde.gob.ar/pluginfile.php/12902/course/overviewfiles/curso_ccoo.png" alt="" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Comunicaciones oficiales</h5>
+          <p class="card-text">Realizar curso de comunicaciones oficiales</p>
+          <br>
+          <hr>
+          {% if not session.user_id %}
+          <div class="text-center">
+             <h6>Registrese e inicie sesion para poder ingresar</h6>
+            <a href="login">Iniciar sesion</a>
+           </div>
+           {% endif %}
+           {% if session.user_id %}
+          <div class="text-center">
+         <a href="/verNotas/CCOO/1121" class="btn btn-outline-success btn-bg">Entrar al curso</a>
+        </div>
+        {% endif %}
+        </div>
+       </div>
+      </div>
+    {% if session.nivel == '3' %}
+    <div class="col-lg-4 mb-4">
+    <div class="card">
+        <img src="https://campus.gde.gob.ar/pluginfile.php/836/course/overviewfiles/curso_ee.png" alt="" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Expedientes electronicos</h5>
+          <p class="card-text">Realizar curso de expedientes electronicos
+          </p>
+          <br>
+          <hr>
+          {% if not session.user_id %}
+          <div class="text-center">
+             <h6>Registrese e inicie sesion para poder ingresar</h6>
+            <a href="login">Iniciar sesion</a>
+           </div>
+           {% endif %}
+          {% if session.user_id %}
+          <div class="text-center">
+         <a href="/verNotas/EE/1221" class="btn btn-outline-success btn-bg">Entrar al curso</a>
+        </div>
+        {% endif %}
+        </div>
+        </div>
+      </div>
+      {% endif %}
+      {% if session.nivel == '3' or session.nivel == '2'%}
+      <div class="col-lg-4 mb-4">
+      <div class="card">
+        <img src="https://campus.gde.gob.ar/pluginfile.php/652/course/overviewfiles/curso_gedo.png" alt="" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Generador electronico de documentos oficiales</h5>
+          <p class="card-text">Realizar curso de generador electronico de documentos oficiales</p>
+          <hr>
+          {% if not session.user_id %}
+          <div class="text-center">
+             <h6>Registrese e inicie sesion para poder ingresar</h6>
+            <a href="login">Iniciar sesion</a>
+           </div>
+           {% endif %}
+           {% if session.user_id %}
+          <div class="text-center">
+            <a href="/verNotas/GEDO/1321" class="btn btn-outline-success btn-bg">Entrar al curso</a>
+          </div>
+          {% endif %}
+        </div>
+       </div>
+      </div>
+      {% endif %}
+    </div>
+    <div class="row">
+      <div class="col-lg-4 mb-4">
+      <div class="card">
+        <img src="https://campus.gde.gob.ar/pluginfile.php/12902/course/overviewfiles/curso_ccoo.png" alt="" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Comunicaciones oficiales Nivel 2</h5>
+          <p class="card-text">Realizar curso de comunicaciones oficiales</p>
+          <br>
+          <hr>
+          {% if not session.user_id %}
+          <div class="text-center">
+             <h6>Registrese e inicie sesion para poder ingresar</h6>
+            <a href="login">Iniciar sesion</a>
+           </div>
+           {% endif %}
+           {% if session.user_id %}
+          <div class="text-center">
+
+         <a href="/verNotas/CCOO/1155" class="btn btn-outline-success btn-bg">Entrar al curso</a>
+
+        </div>
+        {% endif %}
+        </div>
+       </div>
+      </div>
+    {% if session.nivel == '3' %}
+    <div class="col-lg-4 mb-4">
+    <div class="card">
+        <img src="https://campus.gde.gob.ar/pluginfile.php/836/course/overviewfiles/curso_ee.png" alt="" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Expedientes electronicos Nivel 2</h5>
+          <p class="card-text">Realizar curso de expedientes electronicos
+          </p>
+          <br>
+          <hr>
+          {% if not session.user_id %}
+          <div class="text-center">
+             <h6>Registrese e inicie sesion para poder ingresar</h6>
+            <a href="login">Iniciar sesion</a>
+           </div>
+           {% endif %}
+          {% if session.user_id %}
+          <div class="text-center">
+         <a href="/verNotas/EE/1240" class="btn btn-outline-success btn-bg">Entrar al curso</a>
+        </div>
+        {% endif %}
+        </div>
+        </div>
+      </div>
+      {% endif %}
+      {% if session.nivel == '3' or session.nivel == '2'%}
+      <div class="col-lg-4 mb-4">
+      <div class="card">
+        <img src="https://campus.gde.gob.ar/pluginfile.php/652/course/overviewfiles/curso_gedo.png" alt="" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Generador electronico de documentos oficiales Nivel 2</h5>
+          <p class="card-text">Realizar curso de generador electronico de documentos oficiales</p>
+          <hr>
+          {% if not session.user_id %}
+          <div class="text-center">
+             <h6>Registrese e inicie sesion para poder ingresar</h6>
+            <a href="login">Iniciar sesion</a>
+           </div>
+           {% endif %}
+           {% if session.user_id %}
+          <div class="text-center">
+            <a href="/verNotas/GEDO/1338" class="btn btn-outline-success btn-bg">Entrar al curso</a>
+          </div>
+          {% endif %}
+        </div>
+       </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  </section>
+{% endblock %}
+
+

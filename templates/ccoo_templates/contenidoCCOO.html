@@ -1,0 +1,67 @@
+<style>
+   iframe, object, embed {
+        max-width: 100%;
+        max-height: 100%;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+    a.list-group-item{
+        color: black;
+
+    }
+    a.list-group-item:hover {
+  background:gray
+  ;
+  color: white;
+
+}
+footer{
+    background-color: black;
+}
+</style>
+{% extends "layout.html" %}
+{% block title %}
+   Cursos
+{% endblock %}
+{% block main %}
+<br>
+<br>
+{% if session.user_id %}
+<div class="row">
+        
+        {% include "ccoo_templates/sidebarCCOO.html" %}
+
+
+        {% if not content %}
+        {% if session.rol == 2 or session.rol == 3 %}
+        <div class="col-md-4">
+            <br>
+        <h4>Esta seccion no cuenta con informacion cargada. Desea cargar informacion?</h4>
+        <br>
+        <br>
+        <button type="button" class="btn btn-primary text-right" style="height: 120px;" ><a style="color: white;" href="/nuevaSeccion/{{codigo}}">Agregar Seccion</a></button>
+        {% endif %}
+    </div>
+        {% endif %}
+        {% for i in content %}
+    <div class="col-md-8">
+        {% if session.rol == 2 or session.rol == 3 %}
+        <button type="button" class="btn text-right"><a href="/editar/{{i["co_Id"]}}" style="float: right;">Editar</a></button>
+        {% endif %}
+        <main class="col h-100" style="background-color: white;">
+            {{i["co_Contenido"]|safe}}
+            {% endfor %}
+        </tbody>
+    </main>
+</div>
+</div>
+{% else %}
+<h3>No tienes permitido el acceso a esta seccion</h3>
+{% endif %}
+{% endblock %}
+
+
+
+

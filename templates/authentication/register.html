@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{% block title %}
+   Cursos
+{% endblock %}
+{% block main %}
+<br>
+<br>
+<br>
+<br>
+<hr>
+{% if session.rol == 2 or session.rol == 3 %}
+<div class="container-fluid">
+<form action="/register" method="post">
+    <h4 style="font-weight: bold; color: #178cc4;">Ingrese sus datos</h4>
+    <div class="form-group">
+        <input class="form-control" autofocus name="cuil" placeholder="CUIL sin puntos ni guiones" type="text">
+    </div>
+    <div class="form-group">
+        <input autocomplete="off"  class="form-control" name="username" placeholder="Usuario" type="text">
+    </div>
+    <div class="form-group">
+        <input class="form-control" name="password" placeholder="Password" type="password">
+    </div>
+
+    <div class="form-group">
+        <input class="form-control" name="nombre" placeholder="Nombre" type="text">
+    </div>
+    <div class="form-group" id="hola">
+        <input class="form-control" name="apellido" placeholder="Apellido" type="text">
+    </div>
+    <div class="form-group">
+        <input class="form-control" name="email" placeholder="Email" type="text">
+    </div>
+    <div class="form-group">
+        <label for="reparticion">Reparticion</label>
+        <select class="form-control" id="reparticion" name="reparticion">
+            <option id=''>Elija su reparticion</option>
+            <option value='Gobernación'>Gobernación</option>
+            <option value='Ministerio de Salud'>Ministerio de Salud</option>
+            <option value='Ministerios de Educación'>Ministerios de Educación</option>
+            <option value='Ministerio de Seguridad'>Ministerio de Seguridad</option>
+            <option value='Ministerio de Producción'>Ministerio de Producción</option>
+            <option value='Ministerio de Hacienda y Finanzas'>Ministerio de Hacienda y Finanzas</option>
+            <option value='Ministerio de Ambiente'>Ministerio de Ambiente</option>
+            <option value='Ministerio de Gobierno y Justicia'>Ministerio de Gobierno y Justicia</option>
+            <option value='Ministerio de Hacienda y Finanzas'>Ministerio de Hacienda y Finanzas</option>
+            <option value='Ministerio de Desarrollo Humano'>Ministerio de Desarrollo Humano</option>
+            <option value='Ministerio de Cultura y Turismo'>Ministerio de Cultura y Turismo</option>
+            <option value='Ministerio de Infraestructura'>Ministerio de Infraestructura</option>
+            <option value='Ministerio de Trabajo y Empleo'>Ministerio de Trabajo y Empleo</option>
+            <option value='Secretaria de Modernización'>Secretaria de Modernización</option>
+            <option value='Secretaria de Gestión de la Gobernación'>Secretaria de Gestión de la Gobernación</option>
+            <option value='Secretaria de Asuntos Legales e institucionales'>Secretaria de Asuntos Legales e institucionales</option>
+            <option value='Secretaria de Integración Regional y relaciones internacionales'>Secretaria de Integración Regional y relaciones internacionales</option>
+            <option value='Secretaria General de la Gobernación'>Secretaria General de la Gobernación</option>
+            <option value='Secretaria de Comunicación y Gobierno Abierto'>Secretaria de Comunicación y Gobierno Abierto</option>
+            <option value='Secretaria de la unidad coordinadora y ejecutora de planes y programas interministeriales'>Secretaria de la unidad coordinadora y ejecutora de planes y programas interministeriales</option>
+            <option value='Dirección de Administración de la Gobernación'>Dirección de Administración de la Gobernación</option>
+            </select> 
+    </div>
+        {% if session.rol == 3 %}
+    <div class="form-group">
+        <input class="form-control" name="rol" placeholder="Rol" type="text">
+    </div>
+        {% endif %}
+    <div class="text-center">
+        <button id="button" class="btn btn-primary blueBtn" type="submit">Registrar</button>
+    </div>
+    {% else %}
+    <h3>No tienes permitido el acceso a esta seccion</h3>
+    {% endif %}
+</form>
+</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+   Cursos
+{% endblock %}
+
+{% block main %}
+
+   <br>
+   <br>
+   <br>
+   <h3 style="font-weight: bold; color: #178cc4;">Envienos un mail o contactenos por medio de una de nuestras redes sociales</h3>
+   <br>
+   <br>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<a class="floatF"  href="https://www.facebook.com/Secretaría-de-Modernización-Jujuy-100508345130519/" class="facebook"><i class="fa fa-facebook my-floatF"></i></a>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<a href="https://api.whatsapp.com/send?phone=543884383563" class="float" target="_blank">
+<i class="fa fa-whatsapp my-float"></i>
+
+</a>
+<form action="/sendConsulta" method="POST">
+    <div class="form-group">
+        <input autocomplete="off" autofocus class="form-control" name="asunto" id="asunto" placeholder="Cual es su duda?" type="text">
+    </div>
+    <textarea name="textArea" class="editme" id="textArea" cols="30" rows="10">Ingrese su duda o Consulta</textarea>
+    <br>
+    <br>
+    <div class="text-center">
+        <button id="button" class="btn btn-primary btn-lg blueBtn" type="submit" style="width: 300px;">Enviar</button>
+    </div>
+    <br>
+
+</form>
+
+
+{% endblock %}

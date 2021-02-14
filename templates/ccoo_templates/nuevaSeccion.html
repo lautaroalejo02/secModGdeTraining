@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block title %}
+   Cursos
+{% endblock %}
+{% block main %}
+<br>
+<br>
+<br>
+<br>
+<hr>
+    <div class="row">
+        <div class="col-md-12 col-12 col-sm-12 col-lg-8 col-xl-8">
+        <form method="post" action="/upload">
+        <textarea name="textArea" class="editme" style="height: 600px; width: 100%;" >
+            Ingrese el contenido
+          </textarea>
+          <br>
+          <br>
+
+    </div>
+    <div class="col-md-4">
+
+
+      <!-- <hr> -->
+            <label for="titulo" style="font-weight: bolder; font-size: large;">Titulo</label>
+            <input type="text" class="form-control" id="titulo" name="titulo">
+          <hr>
+          <label for="codigo" style="font-weight: bolder; font-size: larger;">Codigo</label>
+          <input type="text" class="form-control" id="codigo" name="codigo" readonly="true" value={{codigo}}>
+        <hr>
+          <label for="usr" style="font-weight: bolder; font-size: larger;">Categoria</label>
+        <br>
+      <select class="form-control" name="cmb" id="cmb" style="width: 220px;">
+        <option value="CCOO">CCOO</option>
+        <option value="EE">EE</option>
+        <option value="GEDO">GEDO</option>
+
+      </select>
+      {% if session.rol == 2 or session.rol == 3 %}
+      <button class="btn btn-outline-primary" style="width: 300px;" type="submit">Enviar</button>
+      {% endif %}
+    </form>
+      <hr>
+    </div>
+    </div>
+
+{% endblock %}
+
+

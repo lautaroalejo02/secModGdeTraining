@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block title %}
+   Cursos
+{% endblock %}
+{% block main %}
+<br>
+<br>
+<br>
+<br>
+<hr>
+{% if session.rol == 2 or session.rol == 3 %}
+<div class="container-fluid">
+<form action="/modificarPostU" method="post">
+    {% for i in userSelected %}
+    <h2>IMPORTANTE. NO OLVIDARSE DEJAR EN BLANCO EL CAMPO PASSWORD. POR DEFECTO SE GUARDARA EL CUIL COMO CLAVE</h2>
+    <div class="form-group">
+        <input class="form-control" value={{i["usu_Id"]}} name="id" placeholder="Id" type="number">
+    </div>
+    <div class="form-group">
+        <input class="form-control" value={{i["usu_Cuil"]}}  name="cuil" placeholder="CUIL sin puntos ni guiones" type="text">
+    </div>
+    <div class="form-group">
+        <input autocomplete="off" value={{i["usu_Username"]}}  autofocus class="form-control" name="username" placeholder="Usuario" type="text">
+    </div>
+    <div class="form-group">
+        <input class="form-control" value={{i["usu_Cuil"]}} name="password" placeholder="Password" type="password">
+    </div>
+
+    <div class="form-group">
+        <input class="form-control" value={{i["usu_Nombre"]}}  name="nombre" placeholder="Nombre" type="text">
+    </div>
+    <div class="form-group" id="hola">
+        <input class="form-control" value={{i["usu_Apellido"]}}  name="apellido" placeholder="Apellido" type="text">
+    </div>
+    <div class="form-group">
+        <input class="form-control" value={{i["usu_Email"]}}  name="email" placeholder="Email" type="text">
+    </div>
+    <div class="form-group">
+        <input class="form-control" value='{{i["usu_Reparticion"]}}'  id="reparticion" name="reparticion" placeholder="Reparticion" type="text">
+    </div>
+    <div class="form-group">
+        <input class="form-control" value={{i["usu_Nivel"]}}  id="nivel" name="nivel" placeholder="Nivel" type="text">
+    </div>
+    <div class="text-center">
+        <button id="button" class="btn btn-primary" type="submit">Actualizar datos</button>
+    </div>
+    {% endfor %}
+    {% else %}
+    <h3>No tienes permitido el acceso a esta seccion</h3>
+    {% endif %}
+</form>
+</div>
+{% endblock %}

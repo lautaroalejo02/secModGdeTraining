@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block title %}
+   Cursos
+{% endblock %}
+{% block main %}
+<br>
+<br>
+<br>
+<br>
+<hr>
+<div class="col-md-10">
+    <form action="/crearPost" method="POST">
+
+        <h3>Crear post en el foro</h3>
+        <br>
+        <label for="codigo" style="font-weight: bold; font-size: larger;">Titulo</label>
+          <input type="text" class="form-control" id="titulo" name="titulo">
+          <br>
+          <label for="contenido" style="font-weight: bold; font-size: larger;">Contenido del post</label>
+    <textarea name="contenido" id="contenido" placeholder="Escribi tu respuesta" class="form-control not-here" rows="5" name="contenido" id="contenido"></textarea>
+<br>
+    <button type="submit" class="btn btn-primary btn-lg" >Crear post</button>
+   </p>
+</form>
+</div>
+{% endblock %}

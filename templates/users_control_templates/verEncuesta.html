@@ -1,0 +1,56 @@
+<style>
+ .card{
+    border-radius: 20px;
+    width: 350px;
+    background: #fff;
+    height: 150vh  !important;
+    box-shadow: 0 2px 55px rgba(0, 0, 0, 0.1);
+}
+</style>
+{% extends "layout.html" %}
+{% block title %}
+   Cursos
+{% endblock %}
+{% block main %}
+<br>
+<br>
+<br>
+<br>
+<hr>
+{% if session.rol == 3 %}
+<div class="Container">
+<h2>Respuestas</h2>
+<br>
+<div class="row" >
+             {% for i in encuestas %}
+             <div class="col">
+             <div class="card" style="height: 1000vh;">
+              <div class="card-header" style="background-color: #026ab6;">
+                <h5 class="card-title" style="font-size: bolder; color: white;">Opinion de {{i["usu_Nombre"]}} {{i["usu_Apellido"]}}</h5>
+              </div>
+                <div class="card-body h100">
+                  <p class="card-text">Nombre y Apellido: {{i["usu_Nombre"]}} {{i["usu_Apellido"]}}</p>
+                  <p class="card-text">Seccion: {{i["enc_Seccion"]}}</p>
+                  <p class="card-text">CUIL: {{i["usu_Cuil"]}}</p>
+                  <p class="card-text">Reparticion: {{i["usu_Reparticion"]}}</p>     
+
+                  <hr>
+                  <div class="card-block">
+                  <p class="card-text" style="font-weight: bold;">Respuesta: {{i["enc_Contenido"]|safe}}</p>
+                </div>  
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Creado el {{i["enc_Fecha"]}}</small>
+                    <a class="btn btn-danger" href="/borrar/{{i["enc_Id"]}}">Borrar</a>
+                  </div>
+              </div>
+              <br>
+            </div>
+             {% endfor %}
+            </div>
+          </div>
+{% else %}
+<h3>No tienes permitido el acceso a esta seccion</h3>
+{% endif %}
+{% endblock %}  
+
