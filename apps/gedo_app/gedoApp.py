@@ -19,7 +19,7 @@ def get_content_gedo(codigo):
     if codigo == 1337 and session['nivel'] == '2':
         level_up_gedo_query(session["user_id"])
     if codigo == 1369 and session['nivel'] == '6':
-        level_up_ccoo_query2(session["user_id"])
+        level_up_gedo_query2(session["user_id"])
     return render_template("gedo_templates/contenidoGEDO.html", content=content, codigo=codigo)
 
 
