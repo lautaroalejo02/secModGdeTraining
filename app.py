@@ -20,7 +20,6 @@ from apps.users_app.users_Routes import *
 from helper import *
 from database_init import db
 app = Flask(__name__)
-app.register_blueprint(gedoManager)
 app.register_blueprint(ccooApp)
 app.register_blueprint(eeApp)
 app.register_blueprint(gedoApp)
