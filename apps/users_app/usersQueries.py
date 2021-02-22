@@ -35,6 +35,14 @@ def get_all_users_query():
     return all_users
 
 
+def check_username():
+    all_users = db.execute("""
+    SELECT usu_Username
+    FROM users
+    """)
+    return all_users
+
+
 def get_user_by_user_by_id_query(id):
     user = db.execute("""
     SELECT usu_Id,usu_Cuil,usu_Username,usu_Nombre,usu_Apellido,usu_Email,usu_Rol,usu_Reparticion,usu_Nivel

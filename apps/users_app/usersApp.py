@@ -29,6 +29,9 @@ def register_user():
             return error("Revise el nombre e intente nuevamente")
         if not request.form.get('apellido'):
             return error("Revise el apellido e intente nuevamente")
+        usernames = check_username()
+        if not request.form.get('username' in usernames):
+            return error("Username en uso, elija otro e intente nuevamente")
         try:
             if session["rol"] != 3:
                 rol = 1
