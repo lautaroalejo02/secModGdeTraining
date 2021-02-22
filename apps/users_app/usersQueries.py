@@ -27,17 +27,14 @@ def login_query(username):
     return user
 
 
+def check_username():
+    users = db.execute("SELECT usu_Username FROM users")
+    return users
+
+
 def get_all_users_query():
     all_users = db.execute("""
     SELECT usu_Id,usu_Cuil,usu_Username,usu_Nombre,usu_Apellido,usu_Email,usu_Rol,usu_Reparticion,usu_Nivel
-    FROM users
-    """)
-    return all_users
-
-
-def check_username():
-    all_users = db.execute("""
-    SELECT usu_Username
     FROM users
     """)
     return all_users
